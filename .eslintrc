@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": { 
+    "es6": true
+  },
+  "plugins": [
+    "react",
+    "flow-vars"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "Generator": true
+  },
+  "rules": {
+    //For immutable.js pseudo class constructor factories
+    "new-cap": [2, { "capIsNewExceptions": [ "Map", "List" ] }],
+    "react/sort-comp": [2, order: [ 'static-methods', 'lifecycle', 'render', 'everything-else' ]],
+    "no-use-before-define": 0,
+    "max-len": [2, 140, 4],
+    "eqeqeq": [2, "smart"]
+  }
+}
