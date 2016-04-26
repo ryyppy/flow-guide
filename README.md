@@ -1,4 +1,4 @@
-# FLOW-INTRODUCTION
+# Flow Guide 
 
 This repository aims to be a newbie-guide for writing typed JavaScript with
 Facebook's Flow - a static type checker for JavaScript (http://flowtype.org).
@@ -7,7 +7,7 @@ We will first discover how to set up our tools to get us running. Afterwards, we
 will dive into some examples of how we can leverage types to make our JavaScript
 code more predictable and even maybe more robust.
 
-# Introduction - Setup your Flow-Typed Project
+# How to set up your Flow typed Project
 
 We assume that you are using following toolchain:
 
@@ -15,9 +15,9 @@ We assume that you are using following toolchain:
 * ESlint for style checking
 * Flow >= 0.23.0
 
-General Note: I will discuss the most minimalistic setup to get our tools
-running with `flow`. In this project I added additional configuration like
-airbnb eslint rules, so don't get confused by that.
+I will discuss the most minimalistic setup to get our tools running with `flow`.
+In this project I added additional configuration like airbnb eslint rules, so
+don't get confused by that.
 
 ## Flow Installation
 
@@ -103,19 +103,27 @@ your `.flowconfig`'s `[ignore]` section, which will cause the program to skip
 these defined files.
 
 The `flow` server will provide important endpoints for retreiving data about
-parsed files, is usually launched by your IDE / Text-Editor (if you installed
-the proper plugins of course) and empowers those tools to use their
-auto-completion feature with inferred types.
+parsed files, so it is usually launched by your IDE / Text-Editor (if you installed
+the proper plugins of course). Without that architecture, auto-completion would
+be hard, so we should appreciate that awesome feature!
 
 ## Let us write some type-safe code! 
 
 To ease you in, we will get you familiar with `flow`'s syntax and try to give
 you a general idea of how it's type inference works. All examples are listed in
-the repositories `./src` directory, which will eventually be covered by tests
-stored in `./tests`. 
+the repositories `./tutorial` directory.
 
 The best way to enjoy this tutorial is to clone this repository and open your
-favorite editor to open the examples and play around with them. Let's warm up with
-`./src/01-syntax`! 
+favorite editor to open the tutorial directory, read through the files and play
+around with the code. See what happens if you change things, try to break things
+intentionally and get a grasp of how `flow`'s error messages lead you to your
+mistakes.
+
+The tutorial gradually introduces flow concepts file by file, so make sure to
+read the files in order. Comments will lead you through the important sections
+of the code. To code grows while we introduce new concepts, sometimes we detach
+from previous examples, sometimes we built upon them. Don't get confused by
+previous examples, just concentrate on the current context (imports etc.) and
+you should be fine ;-)
 
 Enjoy!
