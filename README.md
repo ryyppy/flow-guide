@@ -110,7 +110,7 @@ be hard, so we should appreciate that awesome feature!
 ## Let us write some type-safe code! 
 
 To ease you in, we will get you familiar with `flow`'s syntax and try to give
-you a general idea of how it's type inference works. All examples are listed in
+you a general idea of how its type inference works. All examples are listed in
 the repositories `./tutorial` directory.
 
 The best way to enjoy this tutorial is to clone this repository and open your
