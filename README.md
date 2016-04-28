@@ -79,7 +79,7 @@ npm install eslint-plugin-flow-vars
 Done! Now if we run `eslint src/some.js`, eslint should run through and there
 shouldn't be any errors because of unknown syntax.
 
-## Optional: Atom / VIM Configuration
+## Optional: Atom / VIM Configuration / Sublime Text
 
 If you are using atom, check out the `nuclide` package, available in the
 official `atom` package manager (https://atom.io/packages/nuclide).
@@ -88,6 +88,8 @@ For VIM, I recommend `vim-flow` (https://github.com/flowtype/vim-flow).
 If you installed `flow` only locally via `npm`, make sure to also install a
 `flow` binary globally or to put the installed library in your `$PATH` variable,
 otherwise VIM cannot launch the `flow` server and won't do anything.
+
+For Sublime Text, we recommend [Sublime-Flow](https://github.com/73rhodes/Sublime-Flow) along with [SublimeLinter-Flow](https://github.com/SublimeLinter/SublimeLinter-flow).
 
 # Using flow
 
