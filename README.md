@@ -41,7 +41,7 @@ This can be done via the `transform-flow-strip-types` babel-plugin.
 npm install babel babel-cli babel-core babel-preset-es2015 --save-dev
 
 # Now install flow related stuff 
-npm install babel-plugin-transform-flow-trip-types --save-dev
+npm install babel-plugin-transform-flow-strip-types --save-dev
 ```
 
 After installation, add the plugin to your `.babelrc` file (or wherever your
