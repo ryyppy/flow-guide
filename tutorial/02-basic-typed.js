@@ -1,6 +1,6 @@
 /* @flow */
 
-const CONVERTION_TABLE = {
+const CONVERSION_TABLE = {
   m: {
     km: (m) => m / 1000,
     mi: (m) => m * 0.000621371,
@@ -8,7 +8,7 @@ const CONVERTION_TABLE = {
 };
 
 function convertUnit(from: string, to: string, value: number): number {
-  const transform = CONVERTION_TABLE[from][to];
+  const transform = CONVERSION_TABLE[from][to];
 
   return transform(value);
 }

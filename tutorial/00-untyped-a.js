@@ -1,4 +1,4 @@
-const CONVERTION_TABLE = {
+const CONVERSION_TABLE = {
   m: {
     km: (m) => m / 1000,
     mi: (m) => m * 0.000621371,
@@ -6,10 +6,10 @@ const CONVERTION_TABLE = {
 };
 
 // Converts a value from one unit to another
-// by using our internal totally awesome convertion
+// by using our internal totally awesome conversion
 // table. Returns a new UnitValue object.
 function convertUnit(from, to, value) {
-  const transform = CONVERTION_TABLE[from][to];
+  const transform = CONVERSION_TABLE[from][to];
 
   return transform(value);
 }

@@ -22,7 +22,7 @@ type UnitValue = {
 }
 
 // Object structure with dynamic keys
-type ConvertionTable = {
+type ConversionTable = {
   [from: Unit]: {
     [to: Unit]: ConvertFn,
   },

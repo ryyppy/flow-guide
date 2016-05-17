@@ -1,7 +1,7 @@
 /* @flow */
 
 import assert from 'assert';
-import { CONVERTION_TABLE } from './06-export';
+import { CONVERSION_TABLE } from './06-export';
 import type { Unit, UnitValue } from './06-export';
 
 // We didn't cover any edge cases yet, so let's do this now
@@ -10,16 +10,16 @@ export function convertUnit(from: Unit, to: Unit, value: number): ?number {
     return value;
   }
 
-  // If there is no convertion possible, return null
+  // If there is no conversion possible, return null
   // Note how we are using '== null' instead of '=== null'
   // because the first notation will cover both cases, 'null'
   // and 'undefined', which spares us a lot of extra code.
   // You will need to set eslint's 'eqeqeq' rule to '[2, "smart"]'
-  if (CONVERTION_TABLE[from] == null || CONVERTION_TABLE[from][to] == null) {
+  if (CONVERSION_TABLE[from] == null || CONVERSION_TABLE[from][to] == null) {
     return null;
   }
 
-  const transform = CONVERTION_TABLE[from][to];
+  const transform = CONVERSION_TABLE[from][to];
 
   return transform(value);
 }
@@ -49,4 +49,3 @@ function convertToKm(unitValue: MeterUnitValue): ?UnitValue {
 const value = convertToKm({ unit: 'm', value: 1500 });
 
 assert.deepEqual(value, { unit: 'km', value: 1.5 });
-

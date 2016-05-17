@@ -2,7 +2,7 @@
 
 import assert from 'assert';
 import { convertUnit } from './08-maybe-and-optionals';
-import { CONVERTION_TABLE } from './06-export';
+import { CONVERSION_TABLE } from './06-export';
 import type { Unit, UnitValue } from './06-export';
 
 // Of course, flow does also support classes, so let us
