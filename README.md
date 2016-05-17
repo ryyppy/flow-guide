@@ -41,7 +41,7 @@ This can be done via the `transform-flow-strip-types` babel-plugin.
 npm install babel babel-cli babel-core babel-preset-es2015 --save-dev
 
 # Now install flow related stuff 
-npm install babel-plugin-transform-flow-trip-types --save-dev
+npm install babel-plugin-transform-flow-strip-types --save-dev
 ```
 
 After installation, add the plugin to your `.babelrc` file (or wherever your
@@ -79,7 +79,7 @@ npm install eslint-plugin-flow-vars
 Done! Now if we run `eslint src/some.js`, eslint should run through and there
 shouldn't be any errors because of unknown syntax.
 
-## Optional: Atom / VIM Configuration
+## Optional: Atom / VIM Configuration / Sublime Text
 
 If you are using atom, check out the `nuclide` package, available in the
 official `atom` package manager (https://atom.io/packages/nuclide).
@@ -88,6 +88,8 @@ For VIM, I recommend `vim-flow` (https://github.com/flowtype/vim-flow).
 If you installed `flow` only locally via `npm`, make sure to also install a
 `flow` binary globally or to put the installed library in your `$PATH` variable,
 otherwise VIM cannot launch the `flow` server and won't do anything.
+
+For Sublime Text, we recommend [Sublime-Flow](https://github.com/73rhodes/Sublime-Flow) along with [SublimeLinter-Flow](https://github.com/SublimeLinter/SublimeLinter-flow).
 
 # Using flow
 
@@ -110,7 +112,7 @@ be hard, so we should appreciate that awesome feature!
 ## Let us write some type-safe code! 
 
 To ease you in, we will get you familiar with `flow`'s syntax and try to give
-you a general idea of how it's type inference works. All examples are listed in
+you a general idea of how its type inference works. All examples are listed in
 the repositories `./tutorial` directory.
 
 The best way to enjoy this tutorial is to clone this repository and open your
