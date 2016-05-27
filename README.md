@@ -129,3 +129,8 @@ previous examples, just concentrate on the current context (imports etc.) and
 you should be fine ;-)
 
 Enjoy!
+
+## Extras 
+
+* Write Robust & Type-Safe JavaScript with Flow
+  ([Video](https://www.youtube.com/watch?v=R_B9KgUxPls) / [Presentation](https://speakerdeck.com/ryyppy/write-robust-and-type-safe-javascript-with-flow))
