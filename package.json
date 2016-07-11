@@ -30,5 +30,8 @@
     "eslint-plugin-flow-vars": "^0.3.0",
     "eslint-plugin-react": "^5.0.1",
     "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "flow-bin": "^0.28.0"
   }
 }

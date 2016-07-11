@@ -13,7 +13,7 @@ We assume that you are using following toolchain:
 
 * Babel 6 for transpiling ES6 -> ES5 code
 * ESlint for style checking
-* Flow >= 0.23.0
+* Flow >= 0.28.0
 
 I will discuss the most minimalistic setup to get our tools running with `flow`.
 In this project I added additional configuration like airbnb eslint rules, so
