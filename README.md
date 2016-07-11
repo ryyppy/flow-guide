@@ -121,12 +121,15 @@ around with the code. See what happens if you change things, try to break things
 intentionally and get a grasp of how `flow`'s error messages lead you to your
 mistakes.
 
-The tutorial gradually introduces flow concepts file by file, so make sure to
-read the files in order. Comments will lead you through the important sections
-of the code. To code grows while we introduce new concepts, sometimes we detach
-from previous examples, sometimes we built upon them. Don't get confused by
-previous examples, just concentrate on the current context (imports etc.) and
-you should be fine ;-)
+The tutorial gradually introduces flow concepts file by file (directory by
+directory), so make sure to read the files in order. Comments will lead you
+through the important sections of the code. To code grows while we introduce new
+concepts, sometimes we detach from previous examples, sometimes we built upon
+them. Don't get confused by previous examples, just concentrate on the current
+context (imports etc.) and you should be fine ;-)
+
+Tutorial Chapters:
+* 00 - Basics
 
 Enjoy!
 
