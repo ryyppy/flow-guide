@@ -30,7 +30,7 @@ import { fetchRunSessions } from './util/fetchMocks';
  * PropTypes:
  *   - Self-documenting callback definitions
  *     - For example: (arg: number) => string
- *     - Instead of: React.PropTypes.function 
+ *     - Instead of: React.PropTypes.func
  *   - Highly reusable types, especially useful for props passing 
  *   - Flow types can also be used outside of the Component scope (controller logic etc.) 
  *   - Better readability, no implicit optional props (flow = .isRequired by default)

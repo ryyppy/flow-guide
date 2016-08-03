@@ -130,6 +130,7 @@ context (imports etc.) and you should be fine ;-)
 
 Tutorial Chapters:
 * 00 - Basics
+* 01 - React
 
 Enjoy!
 
