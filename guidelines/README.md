@@ -32,7 +32,7 @@ with Flow code.
 
   > Why? This will help us prevent collisions with variable names etc.
 
-  ```
+  ```javascript
   // bad
   type foo = string;
   type myFoo = string;
@@ -278,8 +278,8 @@ function headers (especially for export functions).
 
   ```javascript
   // Inline types makes it kinda hard to read, mkay?
-  function someFunc(option1: { a: string, b: string }, cb: (a: Object) => string): Promise<string> {
-      // Function body
+  function something(option: { a: string, b: string }, cb: (a: Object) => string): Promise<string> {
+    // Function body
   }
   ```
 
@@ -303,7 +303,7 @@ function headers (especially for export functions).
 - [3.2](#function-headers--complex-return-values) **Complex Return Values**: Don't inline
   complex Object / Function types as return types (excluding generic primitives / interfaces).
 
-  > Why? Mainly for better readablity
+  > Why? Mainly for better readablity.
 
   ```javascript
   // bad
@@ -430,7 +430,7 @@ declarations by hand).
 
 Also, this method will eventually cause problems with future major (breaking) `flow`
 updates. Until the community made up their mind about how to handle these
-dependencies, we will hopefully be able to update flow-bin dependencies in
+dependencies, we will hopefully be able to update `flow-bin` dependencies in
 consuming codebases as soon as we do in our libraries. 
 
 <a name="libdef-files--external-libdef-files"></a><a name="5.1"></a>
