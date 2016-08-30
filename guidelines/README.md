@@ -10,7 +10,7 @@
 
 ## Preface
 
-This document discusses our ways of writing flow-typed JavaScript source code
+This document discusses our ways of writing flowtyped JavaScript source code
 for Runtastic related projects.
 
 To stay consistent between examples, it is assumed that source code is located
@@ -24,13 +24,13 @@ vary project-wise, but we try to stick to this convention as best as possible.
 Type names are a very important part of documentation, so it must be clear what
 intentions each type has, e.g. a consumer of a type should intuitively know what
 meta-type (`Object`, `Function` or primitives like `string`, `number`,...) they
-represent. Also names must be unambiguous to prevent mistaking JavaScript
+represent. Also names must not be ambiguous to prevent mistaking JavaScript
 with Flow code.
 
   <a name="type-names--capitalize"></a><a name="1.1"></a>
   - [1.1](#type-names--capitalize) Capitalize & CamelCase type names
 
-  > This will help us prevent collisions with variable names etc.
+  > Why? This will help us prevent collisions with variable names etc.
 
   ```
   // bad
@@ -47,7 +47,7 @@ with Flow code.
   <a name="type-names--functions"></a><a name="1.2"></a>
   - [1.2](#type-names--functions) **Functions:** Add a `Fn` / `Cb` suffix to mark types as functions / callbacks
 
-  > We realized that this naming convention was especially beneficial for our functional APIs,
+  > Why? We realized that this naming convention was especially beneficial for our functional APIs,
   > which utilize a lot of function composition / currying / mapping etc.
 
   ```javascript
@@ -68,7 +68,7 @@ with Flow code.
 
 When handling a complex code-base, you will find yourself in the situation where
 you have to wrangle a lot with type aliases & definitions, which are eventually
-dependent on eachother (and maybe spread over different files). To make things
+dependent on each other (and maybe spread over different files). To make things
 easier to follow, we need some rough guidelines when and where it makes
 sense to expose those types.
 
@@ -86,7 +86,7 @@ export type * from 'someTypes';
 ```
 
 <a name="type-definitions--types-file"></a><a name="2.1"></a>
-- [2.1](#type-definitions--types-file) **Dedicated Type Files:** Gather common types into Type files / submodules. Rule of thumb: Is a type an integral entity inside the whole module functionality? Then you probably want dedicated files.
+- [2.1](#type-definitions--types-file) **Dedicated Type Files:** Gather common types into Type files / submodules. Rule of thumb: Use a dedicated type file as soon as a type represents an integral entity of the whole module.
 
   > Why? In many cases this reduces mental overhead whenever types of a specific category are used
   > in different parts of the application / library. Also those files make a great target for
@@ -193,7 +193,7 @@ inside a module's (say: "npm package's") scope
 <a name="type-definitions--prevent-name-collisions"></a><a name="2.4"></a>
 - [2.4](#type-definitions--prevent-name-collisions) **Prevent Name Collisions:** Do not export multiple types from different submodules with the same name inside a module's scope.
 
-  > This will prevent name collisions, whenever we try to do an `export type * from './mytypes';`
+  > Why? This will prevent name collisions whenever we try to do an `export type * from './mytypes';`
   > and also prevent confusion on the module level.
 
   **Bad:**
@@ -233,9 +233,8 @@ inside a module's (say: "npm package's") scope
 <a name="type-definitions--typeof"></a><a name="2.5"></a>
 - [2.5](#type-definitions--typeof) **The typeof Operator**: Use the `typeof` operator to reflect type information of a specific function / class. (Details: https://flowtype.org/docs/typeof.html)
 
-  > Why? Before we learned about the existance of the `typeof` operator, we defined concrete
-  > function definitions as types by duplicating the interface, which makes maintanence a little
-  > bit more tedious
+  > Why? Before we learned about the existence of the `typeof` operator, we defined concrete
+  > function definitions as types by duplicating the interface, which complicates future maintanence
 
   **Bad:**
 
@@ -262,17 +261,17 @@ inside a module's (say: "npm package's") scope
 
 ## Function Headers
 
-In many situations, you will end up with some very complex function parameter
+In many cases you will end up with some very complex function parameter
 lists or return types, which are getting messy to read after the addition of flow-types,
 if you don't stick to a guideline.
 
-Here we will give some hints how to handle these situations appropriately.
+Here we will give some hints how to format these annotations appropriately.
 
 <a name="function-headers--complex-arguments"></a><a name="3.1"></a>
 - [3.1](#function-headers--complex-arguments) **Complex Arguments**: Try not to inline `Function` or `Object` definitions in
 function headers (especially for export functions).
 
-  > Why? Because inlined Function / Object definitions are a nightmare to read
+  > Why? Because inlined Function / Object definitions are subjectively hard to read
   > and most of the time explicitly defined types are easier to maintain.
 
   **Bad:**
@@ -302,9 +301,9 @@ function headers (especially for export functions).
 
 <a name="function-headers--complex-return-values"></a><a name="3.2"></a>
 - [3.2](#function-headers--complex-return-values) **Complex Return Values**: Don't inline
-  complex Object / Function types as return types (primitives are fine).
+  complex Object / Function types as return types (excluding generic primitives / interfaces).
 
-  > Why? Readablity
+  > Why? Mainly for better readablity
 
   ```javascript
   // bad
@@ -374,7 +373,7 @@ exposed via the `export` keyword
 - [4.2](#type-inference--non-exported-interfaces) **Non-Exported Interfaces**: Utilize the inference system
 for arrow functions, function body code as much as possible.
 
-  > Why? Flow does a really good job inferring (guessing) your types.
+  > Why? Flow does a really good job inferring (guessing) types.
   > You don't have to worry about uncovered edge-cases. If flow cannot infer a
   > type, it will report an error and will ask for more annotations.
 
@@ -429,6 +428,11 @@ For our projects, we always vendor complementary `flow.js` files. Unfortunately,
 we don't have a solution for minified source code yet (except for writing libdef
 declarations by hand).
 
+Also, this method will eventually cause problems with future major (breaking) `flow`
+updates. Until the community made up their mind about how to handle these
+dependencies, we will hopefully be able to update flow-bin dependencies in
+consuming codebases as soon as we do in our libraries. 
+
 <a name="libdef-files--external-libdef-files"></a><a name="5.1"></a>
 ### [5.2](#libdef-files--external-libdef-files) External Libdef Files
 
@@ -438,6 +442,7 @@ many times you will find yourself in following scenarios:
   + Modules are not typed with `flow`
   + Modules are consumed as single `min.js` file (UMD, AMD,..)
   + Modules / Tools require a specific global environment (e.g. `mocha`)
+  + Modules utilize a breaking newer version of flow
 
 Since we try to achieve a 100% `flow` coverage, there needs to be a balance
 between value gain of using another node-module and type-safetiness.
