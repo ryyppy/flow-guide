@@ -1,4 +1,4 @@
-# Runtastic Flow Guidelines
+# Runtastic Flow Style Guide 
 
 ## Table of Contents
   0. [Preface](#preface)
@@ -420,7 +420,7 @@ this:**
 |- ...
 ```
 
-For now, we use a [bash script](guidelines/assets/flowjs_dist_example.sh)
+For now, we use a [bash script](assets/flowjs_dist_example.sh)
 to automatically create those `.js.flow` definitions. We will eventually work on
 a platform independent solution (node?) when our requirements change.
 

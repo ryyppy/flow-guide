@@ -7,7 +7,7 @@ We will first discover how to set up our tools to get us running. Afterwards, we
 will dive into some examples of how we can leverage types to make our JavaScript
 code more predictable and even maybe more robust.
 
-# How to set up your Flow typed Project
+# How to set up your Flowtyped Project
 
 We assume that you are using following toolchain:
 
@@ -15,8 +15,8 @@ We assume that you are using following toolchain:
 * ESlint for style checking
 * Flow >= 0.28.0
 
-I will discuss the most minimalistic setup to get our tools running with `flow`.
-In this project I added additional configuration like airbnb eslint rules, so
+We will discuss the most minimalistic setup to get our tools running with `flow`.
+In this project we also added additional configuration like airbnb eslint rules, so
 don't get confused by that.
 
 ## Flow Installation
@@ -54,7 +54,7 @@ babel is being configured):
 }
 ```
 
-Now, babel will always strip away Flow source and your JS runtime can interpret
+Now, babel will always strip away `flow` source and your JS runtime can interpret
 the code. This is especially important for feeding `eslint`, so let's look into
 its configuration.
 
@@ -79,17 +79,18 @@ npm install eslint-plugin-flow-vars
 Done! Now if we run `eslint src/some.js`, eslint should run through and there
 shouldn't be any errors because of unknown syntax.
 
-## Optional: Atom / VIM Configuration / Sublime Text
+## Editor Integration 
 
-If you are using atom, check out the `nuclide` package, available in the
-official `atom` package manager (https://atom.io/packages/nuclide).
+We can recommend following editor `flow` plugins:
 
-For VIM, I recommend `vim-flow` (https://github.com/flowtype/vim-flow).
-If you installed `flow` only locally via `npm`, make sure to also install a
-`flow` binary globally or to put the installed library in your `$PATH` variable,
-otherwise VIM cannot launch the `flow` server and won't do anything.
+* Atom: [`nuclide`](https://atom.io/packages/nuclide) (available in the `atom` package manager) 
+* Vim: [vim-flow](https://github.com/flowtype/vim-flow)
+* NeoVim: TBD (blog)
+* Sublime: [Sublime-Flow](https://github.com/73rhodes/Sublime-Flow) & [SublimeLinter-Flow](https://github.com/SublimeLinter/SublimeLinter-flow)
 
-For Sublime Text, we recommend [Sublime-Flow](https://github.com/73rhodes/Sublime-Flow) along with [SublimeLinter-Flow](https://github.com/SublimeLinter/SublimeLinter-flow).
+For some plugins, make sure your `flow` installation is in your `$PATH`
+variable, otherwise some plugins might not pick up the `flow` executable, or
+even worse, pick up the wrong version of it.
 
 # Using flow
 
@@ -134,9 +135,9 @@ Tutorial Chapters:
 
 Enjoy!
 
-# Runtastic Flow Styleguide
+# Runtastic Flow Style Guide
 
-This repository also contains the [styleguide](guidelines/) we use for our flowtyped projects.
+This repository also contains the [style guide](styleguide/) we use for our flowtyped projects.
 Maybe you find it useful as a reference or as a base for your own internal styleset.
 
 We started this documentation as we are quite early `flow` adopters and didn't know of any proper resources
