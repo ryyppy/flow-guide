@@ -134,6 +134,16 @@ Tutorial Chapters:
 
 Enjoy!
 
+# Runtastic Flow Styleguide
+
+This repository also contains the [styleguide](guidelines/) we use for our flowtyped projects.
+Maybe you find it useful as a reference or as a base for your own internal styleset.
+
+We started this documentation as we are quite early `flow` adopters and didn't know of any proper resources
+to describe best practises. So we thought it would be a good idea to get the discussion going!
+
+So if you have any input or questions, be free to open an issue!
+
 ## Extras 
 
 * Write Robust & Type-Safe JavaScript with Flow
