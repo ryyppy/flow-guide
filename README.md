@@ -47,7 +47,7 @@ npm install babel-plugin-transform-flow-strip-types --save-dev
 After installation, add the plugin to your `.babelrc` file (or wherever your
 babel is being configured):
 
-```
+```js
 # .babelrc
 {
   "plugins": [ "transform-flow-strip-types" ]
