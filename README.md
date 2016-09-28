@@ -21,7 +21,7 @@ don't get confused by that.
 
 ## Flow Installation
 
-```
+```bash
 # Either install it locally as npm-package
 npm install flow-bin --save-dev
 
@@ -36,7 +36,7 @@ strip away all Flow-Type code before execution.
 
 This can be done via the `transform-flow-strip-types` babel-plugin.
 
-```
+```bash
 # Install babel stuff with ES6 support (you probably already did that)
 npm install babel babel-cli babel-core babel-preset-es2015 --save-dev
 
@@ -47,8 +47,7 @@ npm install babel-plugin-transform-flow-strip-types --save-dev
 After installation, add the plugin to your `.babelrc` file (or wherever your
 babel is being configured):
 
-```js
-# .babelrc
+```json
 {
   "plugins": [ "transform-flow-strip-types" ]
 }
@@ -68,7 +67,7 @@ unused variables whenever you write type declarations.
 The `eslint` plugin `eslint-plugin-flow-vars` will mute those warnings, so let
 us install all the eslint stuff we need:
 
-```
+```bash
 # ESlint stuff (you probably already did that)
 npm install eslint babel-eslint --save-dev
 
