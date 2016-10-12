@@ -65,7 +65,7 @@ can now utilize the `babel-eslint` parser to pass in sanatized JavaScript code.
 Although this would already work by now, there will be some warnings about
 unused variables whenever you write type declarations.
 
-The `eslint` plugin `eslint-plugin-flow-vars` will mute those warnings, so let
+The `eslint` plugin `eslint-plugin-flowtype` will mute those warnings, so let
 us install all the eslint stuff we need:
 
 ```
@@ -73,7 +73,7 @@ us install all the eslint stuff we need:
 npm install eslint babel-eslint --save-dev
 
 # Now the flow related stuff
-npm install eslint-plugin-flow-vars
+npm install eslint-plugin-flowtype
 ```
 
 Done! Now if we run `eslint src/some.js`, eslint should run through and there
@@ -83,6 +83,7 @@ shouldn't be any errors because of unknown syntax.
 
 We can recommend following editor `flow` plugins:
 
+* All Editors: [eslint-plugin-flowtype-errors](http://github.com/amilajack/eslint-plugin-flowtype-errors) (Run Flow as an ESLint plugin. This plugin requires your editor to already have ESLint integration)
 * Atom: [`nuclide`](https://atom.io/packages/nuclide) (available in the `atom` package manager) 
 * Vim: [vim-flow](https://github.com/flowtype/vim-flow)
 * NeoVim: TBD (blog)
