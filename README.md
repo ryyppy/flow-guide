@@ -136,7 +136,7 @@ Tutorial Chapters:
 
 Enjoy!
 
-# Runtastic Flow Style Guide
+# Flow Style Guide
 
 This repository also contains the [style guide](styleguide/) we use for our flowtyped projects.
 Maybe you find it useful as a reference or as a starter for your own rules.
@@ -150,3 +150,14 @@ So if you have any input or questions, be free to open an issue!
 
 * Write Robust & Type-Safe JavaScript with Flow
   ([Video](https://www.youtube.com/watch?v=R_B9KgUxPls) / [Presentation](https://speakerdeck.com/ryyppy/write-robust-and-type-safe-javascript-with-flow))
+
+## Acknowledgments
+
+This project raised from an idea of having some common ground for using
+flowtype. I had a lot of support and motivation during my work at Runtastic. 
+
+I will continue this flow-guide to make it even more useful... so, thanks
+Runtastic for the trust in my work! 
+
+Maybe you wanna check out their career page?
+https://www.runtastic.com/career
