@@ -35,4 +35,4 @@ function convertUnit(from: Unit, to: Unit, value: number): number {
 
 // 1 km => 1000 m
 const value = convertUnit('km', 'm', 1);
-assert.equal(value, 1000);
+assert.strictEqual(value, 1000);
