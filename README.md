@@ -88,6 +88,8 @@ We can recommend following editor `flow` plugins:
 * Vim: [vim-flow](https://github.com/flowtype/vim-flow)
 * NeoVim: TBD (blog)
 * Sublime: [Sublime-Flow](https://github.com/73rhodes/Sublime-Flow) & [SublimeLinter-Flow](https://github.com/SublimeLinter/SublimeLinter-flow)
+* Visual Studio Code: [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode)
+or [vscode-flow-ide](https://marketplace.visualstudio.com/items?itemName=gcazaciuc.vscode-flow-ide)
 
 For some plugins, make sure your `flow` installation is in your `$PATH`
 variable, otherwise some plugins might not pick up the `flow` executable, or
