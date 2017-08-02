@@ -34,23 +34,24 @@ brew install flow
 Since Flow's syntax supports an extended set of JavaScript, it is required to
 strip away all Flow-Type code before execution.
 
-This can be done via the `transform-flow-strip-types` babel-plugin.
+This can be done via the `babel-preset-flow` babel-plugin.
 
 ```
 # Install babel stuff with ES6 support (you probably already did that)
-npm install babel babel-cli babel-core babel-preset-es2015 --save-dev
+npm install babel-cli babel-core babel-preset-env babel-preset-es2015 --save-dev
 
-# Now install flow related stuff 
-npm install babel-plugin-transform-flow-strip-types --save-dev
+# Now install flow related stuff
+npm install babel-preset-flowtype --save-dev
 ```
 
-After installation, add the plugin to your `.babelrc` file (or wherever your
+After installation, add the plugin and presets to your `.babelrc` file (or wherever your
 babel is being configured):
 
 ```js
 # .babelrc
 {
-  "plugins": [ "transform-flow-strip-types" ]
+  "presets": ["env", "flow", "es2015"],
+  "plugins": ["transform-class-properties"]
 }
 ```
 
